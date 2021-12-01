@@ -33,7 +33,15 @@ namespace Calculator
 
         private void btnCE_Click(object sender, RoutedEventArgs e)
         {
-
+            if(operation=="")
+            {
+                number1 = 0;
+            }
+            else
+            {
+                number2 = 0;
+            }
+            txtDisplay.Text = "0";
         }
 
         private void btn1_Click(object sender, RoutedEventArgs e)
@@ -182,6 +190,83 @@ namespace Calculator
             else
             {
                 number2 = (number2 * 10) ;
+                txtDisplay.Text = number2.ToString();
+
+            }
+        }
+
+        private void btnplus_Click(object sender, RoutedEventArgs e)
+        {
+            operation = "+";
+            txtDisplay.Text = "0";
+        }
+
+        private void btnmin_Click(object sender, RoutedEventArgs e)
+        {
+            operation = "-";
+            txtDisplay.Text = "0";
+        }
+
+        private void btnmulti_Click(object sender, RoutedEventArgs e)
+        {
+            operation = "*";
+            txtDisplay.Text = "0";
+        }
+
+        private void btndivide_Click(object sender, RoutedEventArgs e)
+        {
+            operation = "/";
+            txtDisplay.Text = "0";
+        }
+
+        private void btnequal_Click(object sender, RoutedEventArgs e)
+        {
+            switch (operation)
+            {
+                case "+":
+                    txtDisplay.Text = (number1 + number2).ToString();
+                    operation = "";
+                    break;
+                case "-":
+                    txtDisplay.Text = (number1 - number2).ToString();
+                    operation = "";
+                    break;
+                case "*":
+                    txtDisplay.Text = (number1 * number2).ToString();
+                    operation = "";
+                    break;
+                case "/":
+                    if(number2==0)
+                    {
+                        txtDisplay.Text = "ERROR";
+                    }
+                    else
+                    {
+                        txtDisplay.Text = (number1 / number2).ToString();
+                    }
+                    operation = "";
+                    break;
+            }
+        }
+
+        private void btnC_Click(object sender, RoutedEventArgs e)
+        {
+            number1 = 0;
+            number2 = 0;
+            operation = "";
+            txtDisplay.Text = "0";
+        }
+
+        private void btnBackSpace_Click(object sender, RoutedEventArgs e)
+        {
+            if (operation == "")
+            {
+                number1 = (number1 / 10) ;
+                txtDisplay.Text = number1.ToString();
+            }
+            else
+            {
+                number2 = (number2 / 10) ;
                 txtDisplay.Text = number2.ToString();
 
             }

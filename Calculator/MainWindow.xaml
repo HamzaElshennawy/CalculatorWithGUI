@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Calculator"
         mc:Ignorable="d"
-        Title="Calculator" Height="430" Width="280">
+        Title="Calculator" Height="430" Width="280" Icon="C:\test\Calculator\Calculator\icons\MainIcon.ico">
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
@@ -37,18 +37,18 @@
 
 
         <!--     Math      -->
-        <Button x:Name="btnplus" Grid.Row="1" Grid.Column="3">+</Button>
-        <Button x:Name="btnmin" Grid.Row="2" Grid.Column="3">-</Button>
-        <Button x:Name="btnmulti" Grid.Row="3" Grid.Column="3">*</Button>
-        <Button x:Name="btndivide" Grid.Row="4" Grid.Column="3">/</Button>
-        <Button x:Name="btnequal" Grid.Row="5" Grid.Column="3">=</Button>
+        <Button x:Name="btnplus" Grid.Row="1" Grid.Column="3" Click="btnplus_Click">+</Button>
+        <Button x:Name="btnmin" Grid.Row="2" Grid.Column="3" Click="btnmin_Click">-</Button>
+        <Button x:Name="btnmulti" Grid.Row="3" Grid.Column="3" Click="btnmulti_Click" >*</Button>
+        <Button x:Name="btndivide" Grid.Row="4" Grid.Column="3" Click="btndivide_Click" >/</Button>
+        <Button x:Name="btnequal" Grid.Row="5" Grid.Column="3" Click="btnequal_Click">=</Button>
 
         <!-- clear -->
 
 
         <Button x:Name="btnCE" Grid.Row="1" Grid.Column="0" Click="btnCE_Click">CE</Button>
-        <Button x:Name="btnC" Grid.Row="1" Grid.Column="1">C</Button>
-        <Button x:Name="btnBackSpace" Grid.Row="1" Grid.Column="2" Content="&lt;="/>
+        <Button x:Name="btnC" Grid.Row="1" Grid.Column="1" Click="btnC_Click">C</Button>
+        <Button x:Name="btnBackSpace" Grid.Row="1" Grid.Column="2" Content="&lt;-" Click="btnBackSpace_Click"/>
 
 
 
